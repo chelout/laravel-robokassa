@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Chelout\\Robokassa\\ServiceProvider"
+                "Chelout\\Robokassa\\RobokassaServiceProvider"
             ],
             "aliases": {
                 "Robokassa": "Chelout\\Robokassa\\Facade"

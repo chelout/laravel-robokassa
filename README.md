@@ -1,0 +1,1 @@
+php artisan vendor:publish --provider="Chelout\Robokassa\RobokassaServiceProvider" --tag="config"
