@@ -1,0 +1,49 @@
+{
+    "name": "chelout/robokassa",
+    "description": "Laravel Robokassa",
+    "keywords": [
+        "laravel",
+        "robokassa"
+    ],
+    "homepage": "https://github.com/chelout/robokassa",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Viacheslav Ostrovskiy",
+            "email": "chelout@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "~5.5",
+        "lexty/robokassa": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "mockery/mockery": "^0.9.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chelout\\Robokassa\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chelout\\Robokassa\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Chelout\\Robokassa\\ServiceProvider"
+            ],
+            "aliases": {
+                "Robokassa": "Chelout\\Robokassa\\Facade"
+            }
+        }
+    }
+}
