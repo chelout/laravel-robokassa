@@ -19,8 +19,8 @@ class Robokassa
     protected $successUrl;
     protected $failUrl;
 
-    protected $auth;
-    protected $payment;
+    public $auth;
+    public $payment;
 
     public function __construct()
     {
