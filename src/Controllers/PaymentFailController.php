@@ -9,6 +9,7 @@ class PaymentFailController extends Controller
 {
     public function __invoke(Request $request)
     {
+        Log::info('Fail', $request->all());
 
         return $request->all();
     }
