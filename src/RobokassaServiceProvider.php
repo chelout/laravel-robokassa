@@ -8,13 +8,6 @@ use Illuminate\Support\ServiceProvider;
 class RobokassaServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
      * Application is booting.
      *
      * @return void
@@ -26,6 +19,8 @@ class RobokassaServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'robokassa');
+
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
     }
 
     /**
