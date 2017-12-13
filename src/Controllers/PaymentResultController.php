@@ -13,23 +13,14 @@ class PaymentResultController extends Controller
 {
     public function __invoke(Request $request)
     {
-        Log::info('Result', $request->all());
-
         $robokassa = new Robokassa;
 
-        // Должна быть проверка суммы
         if ($robokassa->payment->validateResult($request->all(), false)) {
-            $result = $robokassa->payment->getSuccessAnswer();
-            
-            Log::info('Result', [$result]);
-            
-            event(new PaymentAccepted($robokassa->payment->getId()));
+            event(new PaymentAccepted($robokassa->payment));
 
-            return $result;
-        } else {
-            event(new PaymentRejected($request->all()));
-
-            return $request->all();
+            return $robokassa->payment->getSuccessAnswer();
         }
+
+        event(new PaymentRejected($robokassa->payment));
     }
 }
