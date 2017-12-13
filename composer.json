@@ -45,5 +45,7 @@
                 "Robokassa": "Chelout\\Robokassa\\Facade"
             }
         }
-    }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }
