@@ -18,7 +18,13 @@ class RobokassaServiceProvider extends ServiceProvider
             __DIR__.'/../config/config.php' => config_path('robokassa.php'),
         ], 'config');
 
+        $this->publishes([
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/robokassa'),
+        ], 'views');
+
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'robokassa');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'robokassa');
 
         $this->loadRoutesFrom(__DIR__.'/routes.php');
     }
