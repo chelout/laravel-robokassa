@@ -16,7 +16,7 @@ class PaymentSuccessController extends Controller
             return in_array($key, ['OutSum', 'InvId', 'SignatureValue', 'Culture']) || starts_with($key, 'Shp_');
         });
 
-    	if (! $robokassa->payment->validateResult($request->all(), false)) {
+    	if (! $robokassa->payment->validateSuccess($request->all(), false)) {
     		return view('robokassa::fail', ['attributes' => $attributes]);
     	}
 
