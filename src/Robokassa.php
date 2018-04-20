@@ -129,6 +129,13 @@ class Robokassa
         return $this;
     }
 
+    public function setReceipt($receipt)
+    {
+        $this->payment->setReceipt($receipt);
+
+        return $this;
+    }
+
     public function getFormUrl($type = null)
     {
         return $this->payment->getFormUrl($type);
